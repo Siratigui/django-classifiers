@@ -1,0 +1,47 @@
+{% extends 'spc/base.html' %}
+
+
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    NLTK Naive Bayes
+  </div>
+  <div class="card-body">
+  
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      Accuracy
+      <span class="badge badge-primary badge-pill">98.40 %</span>
+      </li>
+      
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      Precision
+      <span class="badge badge-primary badge-pill">98.41 %</span>
+      </li>
+      
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      Recall
+      <span class="badge badge-primary badge-pill">98.40 %</span>
+      </li>
+      
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      F1 Score
+      <span class="badge badge-primary badge-pill">98.39 %</span>
+      </li>
+    </ul>
+    <br/>
+
+    <form action="{% url 'post_nltk' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Enter text (Has no Neutral)</label>
+        <textarea name="input" rows=5 style="width:100%;" required></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Evaluate">
+      <a href="{% url 'index' %}" class="btn btn-primary">Main Menu</a>
+    </form>
+    
+  </div>
+</div>
+{% endblock %}

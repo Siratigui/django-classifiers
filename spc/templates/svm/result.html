@@ -1,0 +1,40 @@
+{% extends 'spc/base.html' %}
+
+{% block content %}
+
+{% if prediction == 'neutral' %}
+ <div class="card border-secondary  mb-3">
+  <div class="card-header border-secondary ">Support Vector Machine</div>
+  <div class="card-body text-secondary">
+    <p class="card-text">{{text}}</p>
+  </div>
+  <div class="card-footer text-secondary bg-transparent border-secondary "><b>Prediction: {{prediction}}</b></div>
+</div>
+{% endif %}
+
+{% if prediction == 'positive' %}
+ <div class="card border-success mb-3">
+  <div class="card-header border-success">Support Vector Machine</div>
+  <div class="card-body text-success">
+    <p class="card-text">{{text}}</p>
+  </div>
+  <div class="card-footer text-success bg-transparent border-success"><b>Prediction: {{prediction}}</b></div>
+</div>
+{% endif %}
+
+{% if prediction == 'negative' %}
+ <div class="card border-danger mb-3">
+  <div class="card-header border-danger">Support Vector Machine</div>
+  <div class="card-body text-danger">
+    <p class="card-text">{{text}}</p>
+  </div>
+  <div class="card-footer text-danger bg-transparent border-danger"><b>Prediction: {{prediction}}</b></div>
+</div>
+{% endif %}
+
+<div>
+  <a href="{% url 'svm' %}" class="btn btn-primary">Go back</a>
+  <a href="{% url 'index' %}" class="btn btn-primary">Main Menu</a>
+</div>
+
+{% endblock %}
