@@ -25,7 +25,7 @@ SECRET_KEY = '0=4!f^*+b+*#^kn(ogj_a&t%6sr)ailioxk17a5do+5phqwc&$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'sirat-spc.herokuapp.com']
 
 
 # Application definition
